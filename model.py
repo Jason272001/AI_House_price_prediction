@@ -62,6 +62,6 @@ plt.title('House Price Prediction (Multi-Feature)')
 plt.legend()
 plt.show()
 
-# Save model
+# Save 
 joblib.dump(model, "house_price_model.pkl")
 print("Model Saved Successfully")
