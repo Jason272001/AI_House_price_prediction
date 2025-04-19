@@ -1,13 +1,36 @@
-# 🏡 House Price Prediction App
+# 🏡 House Price Prediction Web App
 
-This project uses a Linear Regression model trained on synthetic house data to predict prices based on:
+This is a Streamlit-powered machine learning web app that predicts house prices based on features like:
 
-- Square footage
+- Living Area (sqft)
 - Bedrooms
 - Bathrooms
-- Grade
 - Condition
+- Grade
+- Waterfront View
 
-## 🚀 Run the App
-```bash
-streamlit run app.py
+Built using **Python, Scikit-Learn, Pandas, and Streamlit**.
+
+## 📊 How It Works
+
+1. The model is trained using Linear Regression
+2. All inputs are scaled using StandardScaler
+3. User inputs are processed in real-time
+4. Predictions are generated instantly with `house_price_model.pkl`
+
+## 🚀 Try the App (Live)
+🔗 [Your Streamlit URL goes here]
+
+## 🧠 Tech Stack
+- Python 3
+- Pandas, NumPy
+- Scikit-Learn
+- Streamlit
+- Matplotlib, Seaborn
+- Joblib
+
+## 🖼️ Preview
+
+![App Screenshot](chart2.png)
+
+## 📁 Project Structure

@@ -8,6 +8,8 @@ model = joblib.load("house_price_model.pkl")
 st.set_page_config(page_title="House Price Predictior",layout="centered")
 st.title("House Price Predictor")
 st.markdown("Enter the house details below to predict the estimated price")
+st.markdown("### 💡 How It Works")
+st.write("This app uses a trained Linear Regression model to predict house prices based on...")
 
 sqft=st.slider("living Area(sqft)",500,5000,step=50)
 bedrooms=st.slider("Bedrooms",1,6)
