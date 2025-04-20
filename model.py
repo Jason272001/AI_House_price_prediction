@@ -12,8 +12,7 @@ import joblib
 house_df = pd.read_csv("kc_house_data_large.csv")
 
 # Load Zillow ZIP-level data
-zillow_df = pd.read_csv("ultimate.csv")
-zillow_df = zillow_df.rename(columns={"RegionName": "zipcode", "2025-03-31": "avg_zip_price"})
+zillow_df = pd.read_csv("zillow_clean.csv")
 
 # ✅ Inject random ZIP codes from Zillow into house_df (temporary fix)
 house_df['zipcode'] = np.random.choice(zillow_df['zipcode'].dropna().unique(), size=len(house_df))
@@ -62,6 +61,6 @@ plt.title('House Price Prediction (Multi-Feature)')
 plt.legend()
 plt.show()
 
-# Save 
+# Save model
 joblib.dump(model, "house_price_model.pkl")
 print("Model Saved Successfully")
