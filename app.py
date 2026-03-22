@@ -3,6 +3,7 @@ from typing import Optional
 
 import joblib
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -144,7 +145,9 @@ if st.button("Estimate price", type="primary"):
     )
 
     scaled_input = scaler.transform(input_df)
-    prediction = float(model.predict(scaled_input)[0])
+    raw = model.predict(scaled_input)
+    # sklearn may return (n,), (n,1), or a 0-d array; avoid [0] on a bare float
+    prediction = float(np.asarray(raw, dtype=np.float64).ravel()[0])
     prediction = max(prediction, 0.0)
 
     st.success(f"Estimated price: **${prediction:,.0f}**")
